@@ -83,8 +83,8 @@ All Squeeze operations run from the Find grid (filter-scoped bulk), auto-on-uplo
 | PHP | 8.1 or later |
 | Image optimisation | ImageMagick or GD. WebP/AVIF require the relevant encoder support in your server's Imagick/GD build (detected automatically; features that aren't available are clearly disabled in the UI). |
 
-> **Status:** actively developed, pre-1.0 (`0.1.x`). The four tools above are
-> implemented and unit-tested; see the [Changelog](CHANGELOG.md).
+> **Status:** 1.0 — the four tools above are implemented and unit-tested. See the
+> [Changelog](CHANGELOG.md).
 
 ---
 

@@ -3,7 +3,7 @@
  * Plugin Name:       AssetDrips
  * Plugin URI:        https://codedrips.com/assetdrips
  * Description:       Find, organise, and optimise large WordPress media libraries — non-destructively. Unused-media detection (Sift), a fast index with faceted search (Find), folders/tags/bulk-edit (Sort), and image optimisation with WebP/AVIF (Squeeze).
- * Version:           0.1.2
+ * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      8.1
  * Author:            CodeDrips
@@ -21,7 +21,7 @@ namespace AssetDrips;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ASSETDRIPS_VERSION', '0.1.2' );
+define( 'ASSETDRIPS_VERSION', '1.0.0' );
 define( 'ASSETDRIPS_FILE', __FILE__ );
 define( 'ASSETDRIPS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ASSETDRIPS_URL', plugin_dir_url( __FILE__ ) );

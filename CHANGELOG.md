@@ -9,9 +9,14 @@ is pre-1.0 and under active development.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-06-19
+
+First public release of AssetDrips as an open-source (GPL-2.0-or-later) WordPress
+plugin, bundling the four tools — Sift, Find, Sort, and Squeeze (detailed below).
+
 ### Added
-- First public release preparation: GPLv2 license, README, contributing and
-  security policies, issue/PR templates, and CI (PHPUnit + PHP_CodeSniffer).
+- First public release: GPLv2 license, README, contributing and security
+  policies, issue/PR templates, and CI (PHPUnit + PHP_CodeSniffer).
 
 ### Changed
 - License changed to **GPL-2.0-or-later** (matching WordPress) and the plugin
