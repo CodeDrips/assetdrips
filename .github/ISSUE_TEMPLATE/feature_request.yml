@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an idea or improvement for AssetDrips
+labels: [ "enhancement" ]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the use case or pain point, ideally at media-library scale.
+      placeholder: When my library has 20k+ images, I can't …
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What you'd like AssetDrips to do.
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which area does this relate to?
+      options:
+        - Sift (unused-media detection)
+        - Find (search / index)
+        - Sort (folders / tags / bulk edit)
+        - Squeeze (optimisation)
+        - Other / not sure
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or other approaches you've thought about.
+    validations:
+      required: false

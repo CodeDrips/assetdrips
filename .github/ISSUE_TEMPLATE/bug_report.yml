@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a problem with AssetDrips
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please **do not** report
+        security vulnerabilities here — see our [Security Policy](../security/policy).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including what you expected instead.
+      placeholder: When I click "Optimize now" on the dashboard, …
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+  - type: input
+    id: wp-version
+    attributes:
+      label: WordPress version
+      placeholder: "6.5"
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "8.2"
+    validations:
+      required: true
+  - type: input
+    id: assetdrips-version
+    attributes:
+      label: AssetDrips version
+      placeholder: "0.1.2"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Relevant environment
+      description: >
+        For optimisation issues, your image editor (ImageMagick or GD) and whether
+        WebP/AVIF are available (shown on the Squeeze settings screen). Otherwise,
+        anything notable: hosting, caching/CDN, other media plugins, library size.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Any PHP errors, WP debug log entries, or screenshots.
+      render: shell
+    validations:
+      required: false

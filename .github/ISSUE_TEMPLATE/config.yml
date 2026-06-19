@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/codedrips/assetdrips/security/advisories/new
+    about: Please report security issues privately, not as public issues.
+  - name: Questions & discussion
+    url: https://github.com/codedrips/assetdrips/discussions
+    about: Ask questions or share ideas in Discussions.

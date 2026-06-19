@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="AssetDrips">
+	<description>WordPress Coding Standards for AssetDrips (PHP 8.1+).</description>
+
+	<!-- Scan the plugin source and entry point. -->
+	<file>assetdrips.php</file>
+	<file>src</file>
+	<file>tests</file>
+
+	<!-- Ignore build and dependency output. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<!-- Tests query the DB directly to assert schema state; the caching and
+	     direct-query sniffs do not apply to test code. -->
+	<rule ref="WordPress.DB.DirectDatabaseQuery">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+	<!-- Test fixtures use meta_key/meta_value as plain array keys, not queries. -->
+	<rule ref="WordPress.DB.SlowDBQuery">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- WordPress Coding Standards. -->
+	<rule ref="WordPress">
+		<!-- PSR-4 file naming: we use class-per-file with StudlyCase filenames,
+		     not the WP core file-name convention. -->
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+
+	<!-- Text domain consistency. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="assetdrips"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Prefix all globals (functions, hooks, options) with assetdrips. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="assetdrips"/>
+				<element value="AssetDrips"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Target PHP 8.1+. -->
+	<config name="testVersion" value="8.1-"/>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Minimum supported WP version for deprecation checks. -->
+	<config name="minimum_wp_version" value="6.0"/>
+</ruleset>
