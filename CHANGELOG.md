@@ -9,6 +9,8 @@ is pre-1.0 and under active development.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-19
+
 ### Fixed
 - **Activation fatal error when installed without Composer's `vendor/`:** the
   bootstrap only loaded classes via `vendor/autoload.php`, so a distributed zip
