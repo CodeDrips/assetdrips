@@ -26,10 +26,30 @@ define( 'ASSETDRIPS_FILE', __FILE__ );
 define( 'ASSETDRIPS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ASSETDRIPS_URL', plugin_dir_url( __FILE__ ) );
 
-// Composer autoloader. Required for the PSR-4 AssetDrips\ namespace.
+// Load the PSR-4 AssetDrips\ namespace. Prefer Composer's autoloader when a
+// vendor/ directory is present (dev checkouts, or a build that bundles it); fall
+// back to a minimal self-contained autoloader otherwise. The plugin has no
+// third-party runtime dependencies, so mapping AssetDrips\ -> src/ is all that
+// is needed for a distributed zip that ships without vendor/. Without this
+// fallback, activation fataled with "Class AssetDrips\Db\Schema not found".
 $assetdrips_autoload = __DIR__ . '/vendor/autoload.php';
 if ( is_readable( $assetdrips_autoload ) ) {
 	require $assetdrips_autoload;
+} else {
+	spl_autoload_register(
+		static function ( string $class_name ): void {
+			$prefix = 'AssetDrips\\';
+			$len    = strlen( $prefix );
+			if ( strncmp( $class_name, $prefix, $len ) !== 0 ) {
+				return;
+			}
+			$relative = str_replace( '\\', '/', substr( $class_name, $len ) );
+			$file     = __DIR__ . '/src/' . $relative . '.php';
+			if ( is_readable( $file ) ) {
+				require $file;
+			}
+		}
+	);
 }
 
 /**

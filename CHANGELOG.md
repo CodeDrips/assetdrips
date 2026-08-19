@@ -9,6 +9,14 @@ is pre-1.0 and under active development.
 
 ## [Unreleased]
 
+### Fixed
+- **Activation fatal error when installed without Composer's `vendor/`:** the
+  bootstrap only loaded classes via `vendor/autoload.php`, so a distributed zip
+  that shipped without a `vendor/` directory fataled on activation with
+  `Uncaught Error: Class "AssetDrips\Db\Schema" not found`. The plugin now falls
+  back to a minimal built-in PSR-4 autoloader (it has no third-party runtime
+  dependencies), making it self-contained regardless of how it is packaged.
+
 ## [1.0.0] - 2026-06-19
 
 First public release of AssetDrips as an open-source (GPL-2.0-or-later) WordPress
